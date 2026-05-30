@@ -13,6 +13,7 @@
 #USING NORMAL METHOD
 def prime_factors(n):
     factors=[]
+    #STARTING FROM SMALLEST PRIME NUMBER
     divisor=2
     while n>1:
         while n%divisor==0:
