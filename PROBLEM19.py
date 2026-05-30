@@ -52,7 +52,7 @@ def gcd_numbers(a,b):
     return a
 print(gcd_numbers(12,18))
 
-#RECURSIVE ECULIDEAN METHOD
+#RECURSIVE EUCLIDEAN METHOD
 def gcd_numbers(a,b):
     a=abs(a)
     b=abs(b)
