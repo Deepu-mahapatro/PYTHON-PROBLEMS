@@ -46,3 +46,34 @@ from collections import Counter
 s1="listen"
 s2="silent"
 print(Counter(s1)==Counter(s2)) 
+
+#USING RECURSION METHOD
+def count_chars(text, index, freq):
+    # BASE CASE
+    # IF ALL CHARACTERS PROCESSED
+    if index == len(text):
+        return
+    # CURRENT CHARACTER
+    ch = text[index]
+    # UPDATE FREQUENCY
+    if ch in freq:
+        freq[ch] += 1
+    else:
+        freq[ch] = 1
+    # RECURSIVE CALL
+    count_chars(text, index + 1, freq)
+# INPUT STRINGS
+s1 = "listen"
+s2 = "silent"
+# CHECK LENGTH FIRST
+if len(s1) != len(s2):
+    print(False)
+else:
+    # STORE FREQUENCIES
+    freq1 = {}
+    freq2 = {}
+    # BUILD FREQUENCY MAPS
+    count_chars(s1, 0, freq1)
+    count_chars(s2, 0, freq2)
+    # COMPARE MAPS
+    print(freq1 == freq2)
