@@ -50,7 +50,7 @@ final_result="".join(result)
 print(final_result)
 
 #USING BIT MANIPULATION METHOD
-text = "PyThon123"
+text = "PyThon123`"
 result = ""
 for ch in text:
     if ch.isalpha():
