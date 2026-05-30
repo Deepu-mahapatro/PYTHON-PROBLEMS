@@ -1,4 +1,4 @@
-#CAESAR CLIPHER ENCODER
+#CAESAR CIPHER ENCODER
 #TAKING EACH CHARACTER IN A MESSAGE
 # #MOVING (SHIFTING) FORWARD BY A FIXED NUMBER OF POSITIONS
 #REPLACING THE ORIGINAL LETTER WITH NEW SHIFTED LETTER
@@ -18,7 +18,7 @@
         #ENCODED=(CURRENT POSITION+SHIFT)%26
         
 #USING BRUTE FORCE APPROACH
-def caeser_cipher(text,shift):
+def caesar_cipher(text,shift):
     #STORE ENCRYPTED STRING
     result=""
     #HANDLE LARGER SHIFTS
@@ -40,10 +40,10 @@ def caeser_cipher(text,shift):
         else:
             result+=char
     return result
-print(caeser_cipher("HELLO WORLD",3)) 
+print(caesar_cipher("HELLO WORLD",3)) 
 
 #BEST METHOD
-def caeser_cipher(text,shift):
+def caesar_cipher(text,shift):
     shift%=26
     result=[]
     for char in text:
@@ -55,10 +55,10 @@ def caeser_cipher(text,shift):
         else:
             result.append(char)
     return "".join(result)
-print(caeser_cipher("HELLO WORLD",3))
+print(caesar_cipher("HELLO WORLD",3))
 
 #SIMPLEST METHOD 
-def caeser_cipher(text,shift):
+def caesar_cipher(text,shift):
     alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     answer=""
     for ch in text:
@@ -69,4 +69,4 @@ def caeser_cipher(text,shift):
         else:
             answer+=ch
     return answer
-print(caeser_cipher("HELLO WORLD",3))
+print(caesar_cipher("HELLO WORLD",3))
