@@ -1,0 +1,66 @@
+#SORT WORDS IN A SENTENCE IN ALPHABETICAL ORDER
+#TO ARRANGE ALL WORDS OF A SENTENCE
+#IN ASCENDING ALPHABETICAL ORDER
+#CORE IDEA:
+      #SPLIT THE SENTENCE INTO INDIVIDUAL WORDS
+      #STORE THE WORDS IN A LIST
+      #SORT THE LIST ALPHABETICALLY
+      #JOIN THE SORTED WORDS BACK INTO A SENTENCE
+      #RETURN OR PRINT THE RESULT
+#EDGE CASES:
+      #EMPTY STRING -> RETURN EMPTY STRING
+      #SINGLE WORD -> RETURN THE SAME WORD
+      #ALL WORDS ALREADY SORTED -> RETURN AS IS
+      #WORDS IN REVERSE ORDER -> SORT CORRECTLY
+      #REPEATED WORDS SHOULD BE PRESERVED
+      #EXTRA SPACES SHOULD NOT AFFECT SORTING
+      #MIXED UPPERCASE AND LOWERCASE MAY REQUIRE
+      #CASE-INSENSITIVE SORTING IF NEEDED
+#KEY OBSERVATION:
+      #SORTING IS PERFORMED ON WORDS
+      #NOT ON INDIVIDUAL CHARACTERS
+      #ALPHABETICAL ORDER IS DETERMINED
+      #BY LEXICOGRAPHICAL COMPARISON
+#CONCLUSION:
+#SPLIT THE SENTENCE INTO WORDS.
+#SORT THE WORDS ALPHABETICALLY.
+#JOIN THEM BACK INTO A SINGLE SENTENCE.
+#RETURN THE SORTED SENTENCE.
+
+#USING SPLIT() JOIN() AND SORT() METHODS
+def sort_sentence(s):
+    #EDGE CASE:
+    if not s:
+        return ""
+    #SPLIT THE SENTENCE IN TO WORDS
+    words=s.split()
+    #NOW SORT WORDS ALPHABETICALLY
+    words.sort()
+    #JOIN THE WORDS TO GET SENTENCE BACK
+    return " ".join(words)
+s=" mango apple banana dog cat "
+print(sort_sentence(s))
+
+#USING CASE SENSITIVE SORTING
+def sort_sentence(s):
+    #EDGE CASE:
+    if not s:
+        return ""
+    #SORT IGNORE CASE
+    words=sorted(s.split(),key=str.lower)
+    return " ".join(words)
+s="mango cat dog banana apple"
+print(sort_sentence(s))
+
+#REMOVE DUPLICATE WORDS AND SORT IT 
+def sort_sentence(s):
+    #EDGE CASE:
+    if not s:
+        return ""
+    #REMOVE DUPLICATES
+    words=set(s.split())
+    #SORT IGNORE CASE
+    words=sorted(words,key=str.lower)
+    return " ".join(words)
+s="cat dog banana mango apple"
+print(sort_sentence(s))
