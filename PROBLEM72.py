@@ -146,3 +146,4 @@ else:
         print("SECOND SMALLEST ELEMENT DOES NOT EXIST")
     else:
         print(second)
+        
