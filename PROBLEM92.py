@@ -1,0 +1,95 @@
+# GENERATE ALL SUBSETS OF A LIST
+# APPROACH 1 (ITERATIVE METHOD):
+# START WITH EMPTY SUBSET
+# FOR EVERY ELEMENT IN ARRAY
+# CREATE NEW SUBSETS
+# BY ADDING CURRENT ELEMENT
+# TO ALL EXISTING SUBSETS
+# ADD NEW SUBSETS TO RESULT
+# RETURN ALL SUBSETS
+# TIME COMPLEXITY:
+# O(N * 
+# SPACE COMPLEXITY:
+# O(2^N)
+# APPROACH 2 (ITERTOOLS METHOD):
+# USE BUILT-IN COMBINATIONS()
+# GENERATE SUBSETS OF SIZE 0
+# GENERATE SUBSETS OF SIZE 1
+# GENERATE SUBSETS OF SIZE 2
+# ...
+# GENERATE SUBSETS OF SIZE N
+# STORE ALL GENERATED COMBINATIONS
+# RETURN RESULT
+# TIME COMPLEXITY:
+# O(N * 2^N)
+# SPACE COMPLEXITY:
+# O(2^N)
+# APPROACH 3 (BACKTRACKING METHOD):
+# START FROM FIRST INDEX
+# STORE CURRENT SUBSET
+# CHOOSE AN ELEMENT
+# EXPLORE FURTHER SUBSETS
+# REMOVE CHOSEN ELEMENT
+# TRY NEXT POSSIBILITY
+# REPEAT UNTIL ALL SUBSETS ARE GENERATED
+# TIME COMPLEXITY:
+# O(N * 2^N)
+# SPACE COMPLEXITY:
+# O(N) RECURSION STACK
+# O(2^N) OUTPUT STORAGE
+# INTERVIEW COMPARISON:
+# ITERATIVE METHOD:
+# BEST NON-RECURSIVE SOLUTION
+# EASY TO UNDERSTAND
+# EASY TO EXPLAIN
+# ITERTOOLS METHOD:
+# SHORTEST PYTHON SOLUTION
+# USEFUL IN REAL PROJECTS
+# NOT PREFERRED FOR DSA INTERVIEWS
+# BACKTRACKING METHOD:
+# MOST EXPECTED IN INTERVIEWS
+# STANDARD SUBSET TEMPLATE
+# USEFUL FOR MANY RECURSION PROBLEMS
+# CONCLUSION:
+# INTERVIEW EXPECTED:
+# BACKTRACKING
+# BEGINNER FRIENDLY:
+# ITERATIVE METHOD
+# PYTHON BUILT-IN:
+# ITERTOOLS
+
+#USING ITERATIVE METHOD
+def generate_subsets(nums):
+    result=[[]]
+    for num in nums:
+        new_subsets=[]
+        for subset in result:
+            #CREATE A NEW SUBSET
+            new_subsets.append(subset+[num])
+        result.extend(new_subsets)
+    return result
+nums=[1,2,3]
+print(generate_subsets(nums))
+
+#USING ITERTOOLS METHOD
+from itertools import combinations
+nums=[1,2,3]
+result=[]
+for i in range(len(nums)+1):
+    for comb in combinations(nums,i):
+        result.append(list(comb))
+print(result)
+
+#USING BACKTRACKING METHOD
+def subsets(nums):
+    result=[]
+    def backtrack(start,path):
+        result.append(path[:])
+        for i in range(start,len(nums)):
+            path.append(nums[i])
+            backtrack(i+1,path)
+            path.pop()
+    backtrack(0,[])
+    return result
+nums=[1,2,3]
+print(subsets(nums))
