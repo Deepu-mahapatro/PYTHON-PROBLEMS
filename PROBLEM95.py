@@ -1,0 +1,71 @@
+# LEAP YEAR PROBLEM
+# APPROACH 1 (BASIC IF-ELSE METHOD)
+# CHECK DIVISIBILITY BY 400,100,4
+# TIME COMPLEXITY: O(1)
+# SPACE COMPLEXITY: O(1)
+# INTERVIEW VALUE: MOST COMMON
+# APPROACH 2 (SINGLE CONDITION METHOD)
+# year % 400 == 0 OR (year % 4 == 0 AND year % 100 != 0)
+# TIME COMPLEXITY: O(1)
+# SPACE COMPLEXITY: O(1)
+# INTERVIEW VALUE: BEST SOLUTION
+# APPROACH 3 (FUNCTION METHOD)
+# CREATE FUNCTION AND RETURN BOOLEAN
+# TIME COMPLEXITY: O(1)
+# SPACE COMPLEXITY: O(1)
+# INTERVIEW VALUE: GOOD PRACTICE
+# APPROACH 4 (CALENDAR MODULE METHOD)
+# USE calendar.isleap(year)
+# TIME COMPLEXITY: O(1)
+# SPACE COMPLEXITY: O(1)
+# INTERVIEW VALUE: BUILT-IN METHOD
+# APPROACH 5 (TERNARY METHOD)
+# SINGLE LINE OUTPUT
+# TIME COMPLEXITY: O(1)
+# SPACE COMPLEXITY: O(1)
+# EDGE CASES
+# 2000 → LEAP YEAR
+# 1900 → NOT A LEAP YEAR
+# 2024 → LEAP YEAR
+# 2025 → NOT A LEAP YEAR
+# 2400 → LEAP YEAR
+# 2100 → NOT A LEAP YEAR
+# CONCLUSION
+# BEST APPROACH: SINGLE CONDITION METHOD
+# BEST TIME COMPLEXITY: O(1)
+# BEST SPACE COMPLEXITY: O(1)
+
+#BASIC IF ELSE STATEMENT
+year=int(input("enter a number"))
+if year%400==0:
+    print("LEAP YEAR")
+elif year%100==0:
+    print("NOT A LEAP YEAR")
+elif year%4==0:
+    print("LEAP YEAR")
+else:
+    print("NOT A LEAP YEAR")
+    
+#USING SINGLE CONDITION METHOD
+year=int(input("enter a number"))
+if year%400==0 or (year%4==0 and year%100!=0):
+    print("LEAP YEAR")
+else:
+    print("NOT A LEAP YEAR")
+    
+#USING CALENDAR MODULE
+import calendar
+year=int(input("ENTER A YEAR:"))
+if calendar.isleap(year):
+    print("LEAP YEAR")
+else:
+    print("NOT A LEAP YEAR")
+    
+#USING FUNCTION METHOD
+def leap_year(n):
+    return n%400==0 or (n%4==0 and n%100!=0)
+n=int(input("enter a year"))
+if leap_year(n):
+    print("LEAP YEAR")
+else:
+    print("NOT A LEAP YEAR")
